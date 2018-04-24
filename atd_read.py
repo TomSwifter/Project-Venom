@@ -26,7 +26,7 @@ print('| {0:>6} | {1:>6} | {2:>6} | {3:>6} |'.format(*range(4)))
 print('-' * 37)
 
 #Average sensor readings 
-def readSensor(int port):
+def readSensor(port):
     #initial val to average sensor readings 
     averaging = 0
     #get sampling of 5 readings per sensor
@@ -39,7 +39,7 @@ def readSensor(int port):
         #According to datasheet time between each read
         #is-38ms +/- 10ms. Waiting 55 ms assures each
         #read is from a different sample
-        time.sleep(0.55)
+        time.sleep(0.05)
     distance = averaging / 5
     return(distance)   
 
@@ -52,8 +52,7 @@ def convert_to_cm(sensor_number, reading_value):
         return ir2(reading_value)
     elif sensor_number is 3:
         return ir3(reading_value)
-    else
-        return 0 
+    return 0 
            
 # Main loop.
 while True:
@@ -80,6 +79,7 @@ while True:
 #distance functions:
 #take a raw reading and returns a distance
 ###############################
+"""
 def ir1(raw_value):
     dist = #TODO: put function for IR1 here
 
@@ -88,3 +88,4 @@ def ir2(raw_value):
 
 def ir3(raw_value):
     dist = #TODO: put function for IR3 here
+"""
