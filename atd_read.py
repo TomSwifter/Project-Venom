@@ -1,12 +1,12 @@
-# Simple demo of reading each analog input from the ADS1x15 and printing it to
-# the screen.
+# reading each analog input from the ADS1x15 and printing it to the screen.
 # Author: Tomer Aharoni
-# Project Venom -The Creative Machines Lab
+# Project Venom - The Creative Machines Lab.
+# Columbia Unviversity
 import time
-# Import the ADS1x15 module.
-import Adafruit_ADS1x15
+import Adafruit_ADS1x15 #The ADS1x15 module.
+
 # Create an ADS1115 ADC (16-bit) instance.
-# Change the I2C address to (0x48), on the I2C on bus 1
+# Change the I2C address on the TX@ to (0x48) on bus 1
 adc = Adafruit_ADS1x15.ADS1115(address=0x48, busnum=1)
 
 # Choose a gain of 1 for reading voltages from 0 to 4.09V.
@@ -21,6 +21,7 @@ adc = Adafruit_ADS1x15.ADS1115(address=0x48, busnum=1)
 GAIN = 1
 
 print('Reading ADS1x15 values, press Ctrl-C to quit...')
+
 # Print nice channel column headers.
 print('| {0:>6} | {1:>6} | {2:>6} | {3:>6} |'.format(*range(4)))
 print('-' * 37)
